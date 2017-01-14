@@ -37,7 +37,7 @@
   }
 
   + .card-link {
-    margin-left: $card-spacer-x;
+    @include margin-left($card-spacer-x);
   }
 }
 
@@ -77,7 +77,7 @@
   border-top: $card-border-width solid $card-border-color;
 
   &:last-child {
-    @include border-radius(0 0 $card-border-radius-inner $card-border-radius-inner);
+    @include border-bottom-radius($card-border-radius-inner);
   }
 }
 
@@ -154,7 +154,12 @@
 .card-blockquote {
   padding: 0;
   margin-bottom: 0;
-  border-left: 0;
+  @include ltr {
+    border-left: 0;
+  }
+  @include rtl {
+    border-right: 0;
+  }
 }
 
 // Card image
@@ -197,8 +202,8 @@
       // Selectively apply horizontal margins to cards to avoid doing the
       // negative margin dance like our grid. This differs from the grid
       // due to the use of margins as gutters instead of padding.
-      &:not(:first-child) { margin-left: $card-deck-margin; }
-      &:not(:last-child) { margin-right: $card-deck-margin; }
+      &:not(:first-child) { @include margin-left($card-deck-margin); }
+      &:not(:last-child) { @include margin-right($card-deck-margin); }
     }
   }
 }
@@ -237,10 +242,20 @@
           @include border-left-radius(0);
 
           .card-img-top {
-            border-top-left-radius: 0;
+            @include ltr {
+              border-top-left-radius: 0;
+            }
+            @include rtl {
+              border-top-right-radius: 0;
+            }
           }
           .card-img-bottom {
-            border-bottom-left-radius: 0;
+            @include ltr {
+              border-bottom-left-radius: 0;
+            }
+            @include rtl {
+              border-bottom-right-radius: 0;
+            }
           }
         }
 

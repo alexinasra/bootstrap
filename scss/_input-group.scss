@@ -114,7 +114,12 @@
   @include border-right-radius(0);
 }
 .input-group-addon:not(:last-child) {
-  border-right: 0;
+  @include ltr {
+    border-right: 0;
+  }
+  @include rtl {
+    border-left: 0;
+  }
 }
 .input-group .form-control:not(:first-child),
 .input-group-addon:not(:first-child),
@@ -126,7 +131,12 @@
   @include border-left-radius(0);
 }
 .form-control + .input-group-addon:not(:first-child) {
-  border-left: 0;
+  @include ltr {
+    border-left: 0;
+  }
+  @include rtl {
+    border-right: 0;
+  }
 }
 
 //
@@ -148,7 +158,7 @@
     flex: 1;
 
     + .btn {
-      margin-left: (-$input-btn-border-width);
+      @include margin-left(-$input-btn-border-width);
     }
 
     // Bring the "active" button to the front
@@ -161,14 +171,14 @@
   &:not(:last-child) {
     > .btn,
     > .btn-group {
-      margin-right: (-$input-btn-border-width);
+      @include margin-right(-$input-btn-border-width);
     }
   }
   &:not(:first-child) {
     > .btn,
     > .btn-group {
       z-index: 2;
-      margin-left: (-$input-btn-border-width);
+      @include margin-left(-$input-btn-border-width);
       // Because specificity
       @include hover-focus-active {
         z-index: 3;

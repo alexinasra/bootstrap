@@ -14,8 +14,22 @@
   @include media-breakpoint-up($breakpoint) {
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
-    .text#{$infix}-left   { text-align: left !important; }
-    .text#{$infix}-right  { text-align: right !important; }
+    .text#{$infix}-left   {
+      @include ltr {
+        text-align: left !important;
+      }
+      @include rtl {
+        text-align: right !important;
+      }
+    }
+    .text#{$infix}-right  {
+      @include ltr {
+        text-align: right !important;
+      }
+      @include rtl {
+        text-align: left !important;
+      }
+    }
     .text#{$infix}-center { text-align: center !important; }
   }
 }

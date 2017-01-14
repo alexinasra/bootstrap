@@ -15,8 +15,14 @@
 
 @mixin border-right-radius($radius) {
   @if $enable-rounded {
-    border-bottom-right-radius: $radius;
-    border-top-right-radius: $radius;
+    @include ltr {
+      border-bottom-right-radius: $radius;
+      border-top-right-radius: $radius;
+    }
+    @include rtl {
+      border-bottom-left-radius: $radius;
+      border-top-left-radius: $radius;
+    }
   }
 }
 
@@ -29,7 +35,13 @@
 
 @mixin border-left-radius($radius) {
   @if $enable-rounded {
-    border-bottom-left-radius: $radius;
-    border-top-left-radius: $radius;
+    @include ltr {
+      border-bottom-left-radius: $radius;
+      border-top-left-radius: $radius;
+    }
+    @include rtl {
+      border-bottom-right-radius: $radius;
+      border-top-right-radius: $radius;
+    }
   }
 }

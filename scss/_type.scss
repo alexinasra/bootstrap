@@ -91,7 +91,7 @@ mark,
   display: inline-block;
 
   &:not(:last-child) {
-    margin-right: $list-inline-padding;
+    @include margin-right($list-inline-padding);
   }
 }
 
@@ -111,7 +111,13 @@ mark,
   padding: ($spacer / 2) $spacer;
   margin-bottom: $spacer;
   font-size: $blockquote-font-size;
-  border-left: $blockquote-border-width solid $blockquote-border-color;
+  @include ltr {
+    border-left: $blockquote-border-width solid $blockquote-border-color;
+  }
+  @include rtl {
+    border-right: $blockquote-border-width solid $blockquote-border-color;
+  }
+
 }
 
 .blockquote-footer {
@@ -126,11 +132,18 @@ mark,
 
 // Opposite alignment of blockquote
 .blockquote-reverse {
-  padding-right: $spacer;
-  padding-left: 0;
-  text-align: right;
-  border-right: $blockquote-border-width solid $blockquote-border-color;
-  border-left: 0;
+  @include padding-right($spacer);
+  @include padding-left(0);
+  @include ltr {
+    text-align: right;
+    border-right: $blockquote-border-width solid $blockquote-border-color;
+    border-left: 0;
+  }
+  @include rtl {
+    text-align: left;
+    border-right: 0;
+    border-left: $blockquote-border-width solid $blockquote-border-color;
+  }
 }
 
 .blockquote-reverse .blockquote-footer {

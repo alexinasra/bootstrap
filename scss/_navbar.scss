@@ -49,7 +49,7 @@
 .navbar-nav {
   display: flex;
   flex-direction: column; // cannot use `inherit` to get the `.navbar`s value
-  padding-left: 0;
+  @include padding-left(0);
   margin-bottom: 0;
   list-style: none;
 
@@ -107,11 +107,11 @@
 // item and allow easy placement.
 .navbar-toggler-left {
   position: absolute;
-  left: $navbar-padding-x;
+  @include left($navbar-padding-x);
 }
 .navbar-toggler-right {
   position: absolute;
-  right: $navbar-padding-x;
+  @include right($navbar-padding-x);
 }
 
 // Generate series of `.navbar-toggleable-*` responsive classes for configuring

@@ -13,8 +13,8 @@
   position: relative;
   display: inline-flex;
   min-height: (1rem * $line-height-base);
-  padding-left: $custom-control-gutter;
-  margin-right: $custom-control-spacer-x;
+  @include padding-left($custom-control-gutter);
+  @include margin-right($custom-control-spacer-x);
   cursor: pointer;
 }
 
@@ -60,7 +60,7 @@
 .custom-control-indicator {
   position: absolute;
   top: (($line-height-base - $custom-control-indicator-size) / 2);
-  left: 0;
+  @include left(0);
   display: block;
   width: $custom-control-indicator-size;
   height: $custom-control-indicator-size;
@@ -121,7 +121,7 @@
     margin-bottom: $custom-control-spacer-y;
 
     + .custom-control {
-      margin-left: 0;
+      @include margin-left(0);
     }
   }
 }
@@ -138,7 +138,8 @@
   max-width: 100%;
   $select-border-width: ($border-width * 2);
   height: calc(#{$input-height} + #{$select-border-width});
-  padding: $custom-select-padding-y ($custom-select-padding-x + $custom-select-indicator-padding) $custom-select-padding-y $custom-select-padding-x;
+  padding: $custom-select-padding-y $custom-select-padding-x;
+  @include padding-left($custom-select-padding-x + $custom-select-indicator-padding);
   line-height: $custom-select-line-height;
   color: $custom-select-color;
   vertical-align: middle;
@@ -242,7 +243,7 @@
   &::before {
     position: absolute;
     top: -$custom-file-border-width;
-    right: -$custom-file-border-width;
+    @include right(-$custom-file-border-width);
     bottom: -$custom-file-border-width;
     z-index: 6;
     display: block;
@@ -252,7 +253,7 @@
     color: $custom-file-button-color;
     background-color: $custom-file-button-bg;
     border: $custom-file-border-width solid $custom-file-border-color;
-    @include border-radius(0 $custom-file-border-radius $custom-file-border-radius 0);
+    @include border-right-radius($custom-file-border-radius);
   }
 
   @each $lang, $text in map-get($custom-file-text, button-label) {

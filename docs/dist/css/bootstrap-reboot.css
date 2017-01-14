@@ -317,7 +317,14 @@ dt {
 
 dd {
   margin-bottom: .5rem;
-  margin-left: 0;
+}
+
+html:not([dir="rtl"]) dd {
+  margin-left: 0 !important;
+}
+
+html[dir="rtl"] dd {
+  margin-right: 0 !important;
 }
 
 blockquote {

@@ -20,8 +20,8 @@
 
     .tooltip-inner::before {
       bottom: 0;
-      left: 50%;
-      margin-left: -$tooltip-arrow-width;
+      @include left(50%);
+      @include margin-left(-$tooltip-arrow-width);
       content: "";
       border-width: $tooltip-arrow-width $tooltip-arrow-width 0;
       border-top-color: $tooltip-arrow-color;
@@ -30,15 +30,20 @@
   &.tooltip-right,
   &.bs-tether-element-attached-left {
     padding: 0 $tooltip-arrow-width;
-    margin-left: $tooltip-margin;
+    @include margin-left($tooltip-margin);
 
     .tooltip-inner::before {
       top: 50%;
-      left: 0;
+      @include left(0);
       margin-top: -$tooltip-arrow-width;
       content: "";
       border-width: $tooltip-arrow-width $tooltip-arrow-width $tooltip-arrow-width 0;
-      border-right-color: $tooltip-arrow-color;
+      @include ltr {
+        border-right-color: $tooltip-arrow-color;
+      }
+      @include rtl {
+        border-left-color: $tooltip-arrow-color;
+      }
     }
   }
   &.tooltip-bottom,
@@ -48,8 +53,8 @@
 
     .tooltip-inner::before {
       top: 0;
-      left: 50%;
-      margin-left: -$tooltip-arrow-width;
+      @include left(50%);
+      @include margin-left(-$tooltip-arrow-width);
       content: "";
       border-width: 0 $tooltip-arrow-width $tooltip-arrow-width;
       border-bottom-color: $tooltip-arrow-color;
@@ -58,15 +63,20 @@
   &.tooltip-left,
   &.bs-tether-element-attached-right {
     padding: 0 $tooltip-arrow-width;
-    margin-left: -$tooltip-margin;
+    @include margin-left(-$tooltip-margin);
 
     .tooltip-inner::before {
       top: 50%;
-      right: 0;
+      @include right(0);
       margin-top: -$tooltip-arrow-width;
       content: "";
       border-width: $tooltip-arrow-width 0 $tooltip-arrow-width $tooltip-arrow-width;
-      border-left-color: $tooltip-arrow-color;
+      @include ltr {
+        border-left-color: $tooltip-arrow-color;
+      }
+      @include rtl {
+        border-right-color: $tooltip-arrow-color;
+      }
     }
   }
 }

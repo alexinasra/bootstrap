@@ -11,9 +11,23 @@
 
         .#{$abbrev}#{$infix}-#{$size}  { #{$prop}:        $length-y $length-x !important; }
         .#{$abbrev}t#{$infix}-#{$size} { #{$prop}-top:    $length-y !important; }
-        .#{$abbrev}r#{$infix}-#{$size} { #{$prop}-right:  $length-x !important; }
         .#{$abbrev}b#{$infix}-#{$size} { #{$prop}-bottom: $length-y !important; }
-        .#{$abbrev}l#{$infix}-#{$size} { #{$prop}-left:   $length-x !important; }
+        .#{$abbrev}l#{$infix}-#{$size} {
+          @include ltr {
+            #{$prop}-left:   $length-x !important;
+          }
+          @include rtl {
+            #{$prop}-right:   $length-x !important;
+          }
+        }
+        .#{$abbrev}r#{$infix}-#{$size} {
+          @include ltr {
+            #{$prop}-right:   $length-x !important;
+          }
+          @include rtl {
+            #{$prop}-left:   $length-x !important;
+          }
+        }
         .#{$abbrev}x#{$infix}-#{$size} {
           #{$prop}-right: $length-x !important;
           #{$prop}-left:  $length-x !important;
@@ -28,9 +42,9 @@
     // Some special margin utils
     .m#{$infix}-auto  { margin:        auto !important; }
     .mt#{$infix}-auto { margin-top:    auto !important; }
-    .mr#{$infix}-auto { margin-right:  auto !important; }
+    .mr#{$infix}-auto { @include margin-right() }
     .mb#{$infix}-auto { margin-bottom: auto !important; }
-    .ml#{$infix}-auto { margin-left:   auto !important; }
+    .ml#{$infix}-auto { @include margin-left() }
     .mx#{$infix}-auto {
       margin-right: auto !important;
       margin-left:  auto !important;
