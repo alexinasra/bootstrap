@@ -5992,7 +5992,7 @@ button.close {
   position: absolute;
   right: 0;
   bottom: 10px;
-  left: 0 !important;
+  left: 0;
   z-index: 15;
   display: -webkit-box;
   display: -webkit-flex;

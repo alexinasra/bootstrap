@@ -6673,18 +6673,27 @@ html[dir="rtl"] .carousel-control-next {
           background-size: 100% 100%;
 }
 
-.carousel-control-prev-icon {
+html:not([dir="rtl"]) .carousel-control-prev-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M4 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
 }
 
-.carousel-control-next-icon {
+html[dir="rtl"] .carousel-control-prev-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M1.5 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+html:not([dir="rtl"]) .carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M1.5 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+html[dir="rtl"] .carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M4 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
 }
 
 .carousel-indicators {
   position: absolute;
   right: 0;
   bottom: 10px;
+  left: 0;
   z-index: 15;
   display: -webkit-box;
   display: -webkit-flex;
@@ -6697,14 +6706,6 @@ html[dir="rtl"] .carousel-control-next {
   margin-right: 15%;
   margin-left: 15%;
   list-style: none;
-}
-
-html:not([dir="rtl"]) .carousel-indicators {
-  left: 0 !important;
-}
-
-html[dir="rtl"] .carousel-indicators {
-  right: 0 !important;
 }
 
 html:not([dir="rtl"]) .carousel-indicators {
