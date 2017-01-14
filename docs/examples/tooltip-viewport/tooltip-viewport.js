@@ -8,7 +8,7 @@ $(document).ready(function () {
     viewport: {selector: 'body', padding: 2}
   })
   $('.tooltip-viewport-right').tooltip({
-    placement: 'right',
+    placement: 'left',
     viewport: {selector: '.container-viewport', padding: 2}
   })
   $('.tooltip-viewport-bottom').tooltip({

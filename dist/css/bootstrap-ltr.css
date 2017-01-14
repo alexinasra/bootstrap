@@ -5606,7 +5606,7 @@ button.close {
 .tooltip.tooltip-top .tooltip-inner::before, .tooltip.bs-tether-element-attached-bottom .tooltip-inner::before {
   bottom: 0;
   left: 50% !important;
-  margin-left: -5px !important;
+  margin-left: 5px !important;
   content: "";
   border-width: 5px 5px 0;
   border-top-color: #000;
@@ -5614,7 +5614,7 @@ button.close {
 
 .tooltip.tooltip-right, .tooltip.bs-tether-element-attached-left {
   padding: 0 5px;
-  margin-left: 3px !important;
+  margin-left: -3px !important;
 }
 
 .tooltip.tooltip-right .tooltip-inner::before, .tooltip.bs-tether-element-attached-left .tooltip-inner::before {
@@ -5642,7 +5642,7 @@ button.close {
 
 .tooltip.tooltip-left, .tooltip.bs-tether-element-attached-right {
   padding: 0 5px;
-  margin-left: -3px !important;
+  margin-left: 3px !important;
 }
 
 .tooltip.tooltip-left .tooltip-inner::before, .tooltip.bs-tether-element-attached-right .tooltip-inner::before {
