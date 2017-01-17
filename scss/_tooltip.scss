@@ -31,7 +31,7 @@
   &.bs-tether-element-attached-left {
     padding: 0 $tooltip-arrow-width;
 
-    @include margin-left(-$tooltip-margin);
+    @include margin-left($tooltip-margin);
     .tooltip-inner::before {
       top: 50%;
       @include left(0);
@@ -64,7 +64,7 @@
   &.tooltip-left,
   &.bs-tether-element-attached-right {
     padding: 0 $tooltip-arrow-width;
-    @include margin-left($tooltip-margin);
+    @include margin-left(-$tooltip-margin);
 
     .tooltip-inner::before {
       top: 50%;
