@@ -4007,9 +4007,6 @@ html[dir="rtl"] .custom-controls-stacked .custom-control + .custom-control {
   line-height: 1.25;
   color: #464a4c;
   vertical-align: middle;
-  background: #fff url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23333' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right 0.75rem center;
-  -webkit-background-size: 8px 10px;
-          background-size: 8px 10px;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
   -moz-appearance: none;
@@ -4022,6 +4019,18 @@ html:not([dir="rtl"]) .custom-select {
 
 html[dir="rtl"] .custom-select {
   padding-right: 1.75rem !important;
+}
+
+html:not([dir="rtl"]) .custom-select {
+  background: #fff url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23333' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right 0.75rem center;
+  -webkit-background-size: 8px 10px;
+          background-size: 8px 10px;
+}
+
+html[dir="rtl"] .custom-select {
+  background: #fff url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23333' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat left 0.75rem center;
+  -webkit-background-size: 8px 10px;
+          background-size: 8px 10px;
 }
 
 .custom-select:focus {
@@ -6112,11 +6121,11 @@ html[dir="rtl"] .tooltip.tooltip-top .tooltip-inner::before, html[dir="rtl"] .to
 }
 
 html:not([dir="rtl"]) .tooltip.tooltip-right, html:not([dir="rtl"]) .tooltip.bs-tether-element-attached-left {
-  margin-left: -3px !important;
+  margin-left: 3px !important;
 }
 
 html[dir="rtl"] .tooltip.tooltip-right, html[dir="rtl"] .tooltip.bs-tether-element-attached-left {
-  margin-right: -3px !important;
+  margin-right: 3px !important;
 }
 
 .tooltip.tooltip-right .tooltip-inner::before, .tooltip.bs-tether-element-attached-left .tooltip-inner::before {
@@ -6176,11 +6185,11 @@ html[dir="rtl"] .tooltip.tooltip-bottom .tooltip-inner::before, html[dir="rtl"] 
 }
 
 html:not([dir="rtl"]) .tooltip.tooltip-left, html:not([dir="rtl"]) .tooltip.bs-tether-element-attached-right {
-  margin-left: 3px !important;
+  margin-left: -3px !important;
 }
 
 html[dir="rtl"] .tooltip.tooltip-left, html[dir="rtl"] .tooltip.bs-tether-element-attached-right {
-  margin-right: 3px !important;
+  margin-right: -3px !important;
 }
 
 .tooltip.tooltip-left .tooltip-inner::before, .tooltip.bs-tether-element-attached-right .tooltip-inner::before {
