@@ -1,5 +1,6 @@
 html {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
@@ -11,7 +12,8 @@ html {
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 @-ms-viewport {
@@ -37,7 +39,8 @@ body {
 }
 
 hr {
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   height: 0;
   overflow: visible;
 }
@@ -191,7 +194,8 @@ label,
 select,
 summary,
 textarea {
-  touch-action: manipulation;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
 }
 
 table {
@@ -206,8 +210,12 @@ caption {
   caption-side: bottom;
 }
 
-th {
+html:not([dir="rtl"]) th {
   text-align: left;
+}
+
+html[dir="rtl"] th {
+  text-align: right;
 }
 
 label {
@@ -258,7 +266,8 @@ button::-moz-focus-inner,
 
 input[type="radio"],
 input[type="checkbox"] {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 0;
 }
 
@@ -332,5 +341,4 @@ template {
 [hidden] {
   display: none !important;
 }
-
 /*# sourceMappingURL=bootstrap-reboot.css.map */

@@ -305,10 +305,10 @@ caption {
 
 th {
   // Matches default `<td>` alignment
-  @include ltr{
+  @include ltr {
     text-align: left;
   }
-  @include rtl{
+  @include rtl {
     text-align: right;
   }
 }
