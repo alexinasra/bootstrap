@@ -75,6 +75,11 @@
     padding-right: 0;
     padding-left: 0;
   }
+
+  .dropdown-menu {
+    position: static;
+    float: none;
+  }
 }
 
 
@@ -136,13 +141,6 @@
 
     &#{$infix} {
       @include media-breakpoint-down($breakpoint) {
-        .navbar-nav {
-          .dropdown-menu {
-            position: static;
-            float: none;
-          }
-        }
-
         > .container,
         > .container-fluid {
           padding-right: 0;
@@ -160,6 +158,11 @@
 
           .dropdown-menu {
             position: absolute;
+          }
+
+          .dropdown-menu-right {
+            right: 0;
+            left: auto; // Reset the default from `.dropdown-menu`
           }
 
           .nav-link {
@@ -230,7 +233,7 @@
   }
 
   .navbar-toggler-icon {
-    background-image: $navbar-light-toggler-bg;
+    background-image: $navbar-light-toggler-icon-bg;
   }
 
   .navbar-text {
@@ -275,7 +278,7 @@
   }
 
   .navbar-toggler-icon {
-    background-image: $navbar-inverse-toggler-bg;
+    background-image: $navbar-inverse-toggler-icon-bg;
   }
 
   .navbar-text {
